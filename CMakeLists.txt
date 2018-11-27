@@ -34,7 +34,9 @@ add_library(template STATIC
 )
 add_executable(tests
   # TODO: enum your files and delete this comment
-  ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/tests/list_unittests.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/tests/queue_unittests.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/tests/stack_unittests.cpp
 )
 
 # TODO: change template word to project name and delete this comment
