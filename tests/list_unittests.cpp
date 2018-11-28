@@ -179,3 +179,38 @@ TEST(ForwardList, SomeCases) {
   Destruct(list);
   EXPECT_EQ(list.Head, nullptr);
 }
+
+TEST(ForwardList, Reverse) {
+  ForwardList list;
+  Construct(list);
+  PushFront(list, 0);
+  PushFront(list, 1);
+  PushFront(list, 2);
+  PushFront(list, 3);
+
+  EXPECT_EQ(Size(list), 4u);
+  Reverse(list);
+  EXPECT_EQ(Size(list), 4u);
+
+  ForwardList::Node* node = list.Head;
+  ASSERT_NEQ(node, nullptr);
+  EXPECT_EQ(node->Data, 0);
+
+  node = node->Next;
+  ASSERT_NEQ(node, nullptr);
+  EXPECT_EQ(node->Data, 1);
+
+  node = node->Next;
+  ASSERT_NEQ(node, nullptr);
+  EXPECT_EQ(node->Data, 2);
+
+  node = node->Next;
+  ASSERT_NEQ(node, nullptr);
+  EXPECT_EQ(node->Data, 3);
+
+  node = node->Next;
+  ASSERT_EQ(node, nullptr);
+
+  Destruct(list);
+  EXPECT_EQ(list.Head, nullptr);
+}

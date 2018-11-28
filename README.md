@@ -38,6 +38,14 @@ ForwardList::Node* InsertAfter(ForwardList::Node* node, int value);
 // Возвращает размер списка.
 size_t Size(const ForwardList& list);
 
+// Разворачивает список.
+// Т.е изменяет список A -> B -> C -> D
+// и превращает его в D -> C -> B -> A.
+// Требования:
+// * по времени - O(N);
+// * по памяти - O(1).
+void Reverse(ForwardList& list);
+
 ```
 
 
